@@ -11,7 +11,7 @@ function Home(props) {
 
         <main>
           <h1 className="title">
-            {props.title}
+            {props.resModel.title}
           </h1>
         </main>
       </div>
@@ -24,7 +24,7 @@ export async function getServerSideProps(context) {
       return response.data;
     });
 
-    return { props: model}
+    return { props: { resModel: model }}
 }
 
 export default Home;
